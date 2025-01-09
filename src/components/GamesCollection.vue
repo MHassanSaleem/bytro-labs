@@ -15,10 +15,16 @@
           <img :src="game.image" :alt="game.title" class="game-image" />
           <div class="game-overlay">
             <!-- Typing Effect for Description -->
-            <p class="game-description">{{ liveDescriptions[index] }}</p>
+            <p class="slogan">{{ game.slogan }}</p>
+            <p class="game-description">{{game.description}}</p>
+            <div class="player-stats">
+              <p class="max-players">max. players: {{ game.maxplayers }}</p>
+              <p class="cur-players">total players: {{ game.currplayers }}</p>
+            </div>
           </div>
         </div>
         <div class="game-title-section">
+          <button class="details-btn"></button>
           <h2 class="game-title">{{ game.title }}</h2>
           <button class="play-btn"></button>
         </div>
@@ -46,45 +52,35 @@ export default {
         {
           image: require("../assets/Iron-order.png"),
           title: "Iron Order 1919",
-          description: "Iron Order 1919 is a dieselpunk strategy game set in a reimagined WWI era. Command mechs, forge alliances, and outwit opponents in real-time matches with up to 26 players. Conquer, strategize, and reshape history!"
+          slogan: "Conquer, strategize, and reshape history!",
+          description: "Iron Order 1919 is a dieselpunk strategy game set in a reimagined WWI era. Command mechs, forge alliances, and outwit opponents in real-time matches with up to 26 players.",
+          maxplayers: 26,
+          currplayers: "1.5k",
+          detailsLink: "",
+          playLink: "",
         },
         {
           image: require("../assets/COW.png"),
           title: "Call of War",
-          description: "Call of War is a real-time strategy game set in World War II, where you control nations, forge alliances, and engage in epic battles. Command troops, research secret weapons, and conquer the map in matches with up to 100 players. Rewrite history and become the ultimate superpower!"
+          slogan: "Rewrite history & become the ultimate superpower!",
+          description: "Call of War is a real-time strategy game set in World War II, where you control nations, forge alliances, and engage in epic battles. Command troops, research secret weapons, and conquer the map in matches with up to 100 players.",
+          maxplayers: 100,
+          currplayers: "3.1k",
+          detailsLink: "",
+          playLink: "",
         },
         {
           image: require("../assets/Supermacy.png"),
           title: "Supermacy 1914",
-          description: "Supremacy 1914 places you in command of a nation during WWI, where strategy and diplomacy are key to dominating Europe. Manage resources, forge alliances, and deploy historically accurate troops, including experimental tanks, in battles with up to 500 players. Will you lead through diplomacy or brute force?"
+          slogan: "Will you lead through diplomacy or brute force?",
+          description: "Supremacy 1914 places you in command of a nation during WWI, where strategy and diplomacy are key to dominating Europe. Manage resources, forge alliances, and deploy historically accurate troops, including experimental tanks, in battles with up to 500 players.",
+          maxplayers: 500,
+          currplayers: "0.8k",
+          detailsLink: "",
+          playLink: "",
         }
       ],
-      liveDescriptions: [], // Reactive array for live typing effect
     };
-  },
-  mounted() {
-    // Initialize liveDescriptions as empty strings
-    this.liveDescriptions = this.games.map(() => "");
-    this.startTypingEffect();
-  },
-  methods: {
-    startTypingEffect() {
-      this.games.forEach((game, index) => {
-        let currentText = ""; // To store the progressively typed text
-        let charIndex = 0; // Track the current character index
-
-        // Timer to add one character at a time
-        const typingInterval = setInterval(() => {
-          if (charIndex < game.description.length) {
-            currentText += game.description[charIndex];
-            this.liveDescriptions[index] = currentText;
-            charIndex++;
-          } else {
-            clearInterval(typingInterval); // Stop when complete
-          }
-        }, 50); // Adjust speed (in ms) as desired
-      });
-    },
   },
 };
 
@@ -161,20 +157,34 @@ html, body {
         @include transition(transform, 0.3s);
       }
       .game-overlay {
+        display: flex;
+        flex-direction: column;
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
         background-color: $transparent-color;
-        @include flex-center;
         opacity: 0;
+        @include flex-center;
         @include transition(opacity, 0.3s);
+        .slogan{
+          //color: #2196F3;
+          color: #FF5722;
+        }
         .game-description {
           font-size: 1rem;
           margin-bottom: 1rem;
           padding: 0 1rem;
           overflow: hidden; /* Ensures smooth appearance */
+        }
+        .max-players{
+          font-size: 0.8rem;
+          color: #FFC107;
+        }
+        .cur-players{
+          font-size: 0.8rem;
+          color: #4CAF50;
         }
       }
     }
@@ -215,6 +225,21 @@ html, body {
         content: "▶"; /* Play icon */
         font-size: 1.5rem; /* Increase the size of the play icon */
       }
+      .details-btn {
+        width: 50px; /* Full width button */
+        height: 50px; /* Full height button */
+        background-color: $grey-color; /* Red background */
+        color: $red-color;
+        border-radius: 50%; /* Make it round */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .details-btn:hover {
+        background-color: $red-color; /* White background on hover */
+        color: $white-color; /* Red text color on hover */
+      }
+
     }
   }
 }
