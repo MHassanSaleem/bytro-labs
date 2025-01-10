@@ -43,10 +43,6 @@ export default {
 
 <style lang="scss">
 
-a{
-    text-decoration: none;
-}
-
 // Variables
 //$primary-color: #ff4500;
 $red-color: #dd0917;
@@ -66,12 +62,15 @@ $transparent-color: rgba(0, 0, 0, 0.8);
   align-items: center;
 }
 
+a{
+    text-decoration: none;
+}
+
 .game-card {
     width: 30%;
     background-color: $grey-color;
     color: $white-color;
     text-align: center;
-    margin: 1rem;
     overflow: hidden;
     position: relative;
     .card-image-container {
@@ -141,6 +140,7 @@ $transparent-color: rgba(0, 0, 0, 0.8);
         display: flex;
         justify-content: center;
         align-items: center;
+        cursor: url('../assets/cursor.png') 16 16, auto;
       }
       .play-btn:hover {
         background-color: $white-color; /* White background on hover */
@@ -148,7 +148,7 @@ $transparent-color: rgba(0, 0, 0, 0.8);
       }
       .play-btn::before {
         content: "▶"; /* Play icon */
-        font-size: 1.5rem; /* Increase the size of the play icon */
+        font-size: 1rem; /* Increase the size of the play icon */
       }
       .details-btn {
         width: 50px; /* Full width button */
@@ -159,10 +159,11 @@ $transparent-color: rgba(0, 0, 0, 0.8);
         display: flex;
         justify-content: center;
         align-items: center;
+        cursor: url('../assets/cursor.png') 16 16, auto;
       }
       .details-btn:hover {
-        background-color: $red-color; /* White background on hover */
-        color: $white-color; /* Red text color on hover */
+        background-color: $white-color; /* White background on hover */
+        color: $red-color; /* Red text color on hover */
       }
 
     }
