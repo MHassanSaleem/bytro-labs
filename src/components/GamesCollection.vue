@@ -94,6 +94,7 @@ html, body {
   padding: 0;
 }
 
+// Responsive game page styles
 .game-page {
   display: flex;
   flex-direction: column;
@@ -102,15 +103,49 @@ html, body {
   background-size: cover;
   background-position: center;
   min-height: 100vh;
+  padding: 1rem;
 }
 
 // Games Container
 .games-container {
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); // Adjust cards to fit dynamically
+  gap: 1.5rem; // Add spacing between cards
   padding: 2rem;
-  flex-wrap: wrap;
-  
 }
+
+// Game Card styles
+.game-card {
+  background: $background-color;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px #9E9E9E;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  width: 100%;
+  
+  &:hover {
+    transform: scale(1.05); // Add hover effect
+  }
+}
+
+// Responsive adjustments for smaller devices
+@media (max-width: 768px) {
+  .games-container {
+    grid-template-columns: 1fr; // Single column layout for smaller screens
+  }
+  .game-card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .games-container {
+    padding: 1rem; // Reduce padding for very small screens
+  }
+  .game-card {
+    font-size: 14px; // Adjust font size for readability
+  }
+}
+
 
 </style>

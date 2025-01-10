@@ -4,7 +4,7 @@
           <img :src="game.image" :alt="game.title" class="game-image" />
           <div class="game-overlay">
             <!-- Typing Effect for Description -->
-            <p class="slogan">{{ game.slogan }}</p>
+            <p class="slogan"><b>{{ game.slogan }}</b></p>
             <p class="game-description">{{game.description}}</p>
             <div class="player-stats">
               <p class="max-players">max. players: {{ game.maxplayers }}</p>
@@ -53,7 +53,7 @@ $red-color: #dd0917;
 $grey-color: #2c2f33;
 $white-color: white;
 $background-color: #1c1c1e;
-$transparent-color: rgba(0, 0, 0, 0.7);
+$transparent-color: rgba(0, 0, 0, 0.8);
 
 @mixin transition($property, $duration) {
   transition: $property $duration ease-in-out;
