@@ -1,15 +1,12 @@
 <template>
-  <GamesCollection/>
+  <RouterView/>
 </template>
 
 <script>
-import GamesCollection from './components/GamesCollection.vue';
 
 export default {
   name: 'App',
-  components: {
-    GamesCollection,
-  }
+
 }
 </script>
 

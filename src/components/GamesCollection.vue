@@ -31,6 +31,7 @@ export default {
     return {
       games: [
         {
+          id: 1,
           image: require("../assets/Iron-order.png"),
           title: "Iron Order 1919",
           slogan: "Conquer, strategize, and reshape history!",
@@ -41,6 +42,7 @@ export default {
           playLink: "https://apps.apple.com/us/app/iron-order-1919-mech-warfare/id1475646068?mt=8",
         },
         {
+          id: 2,
           image: require("../assets/COW.png"),
           title: "Call of War",
           slogan: "Rewrite history & become the ultimate superpower!",
@@ -51,8 +53,9 @@ export default {
           playLink: "https://www.callofwar.com/?id=304&r=977&shortlink=78fc7ac2&af_sub1=BBBrAAA977&pid=BytroCOM&source_caller=ui",
         },
         {
-          image: require("../assets/Supermacy.png"),
-          title: "Supermacy 1914",
+          id: 3,
+          image: require("../assets/Supremacy.png"),
+          title: "Supremacy 1914",
           slogan: "Will you lead through diplomacy or brute force?",
           description: "Supremacy 1914 places you in command of a nation during WWI, where strategy and diplomacy are key to dominating Europe. Manage resources, forge alliances, and deploy historically accurate troops, including experimental tanks, in battles with up to 500 players.",
           maxplayers: 500,

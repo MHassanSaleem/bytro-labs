@@ -14,17 +14,11 @@
         </div>
         <div class="game-title-section">
             <!-- Details Button -->
-            <a :href="game.detailsLink" target="_blank" class="details-link">
-                <button class="details-btn">D</button>
-            </a>
-
+             <RouterLink :to="{ name: 'GameDetails', params:{id:game.id}}" class="details-btn"> Detail</RouterLink>
             <!-- Game Title -->
             <h2 class="game-title">{{ game.title }}</h2>
-
             <!-- Play Button -->
-            <a :href="game.playLink" target="_blank" class="play-link">
-                <button class="play-btn"></button>
-            </a>
+            <button class="play-btn"  @click="goToPlay"></button>
         </div>
     </div>
 </template>
@@ -38,6 +32,12 @@ export default {
             required: true,
         },
     },
+    methods: {
+       
+            goToPlay() {
+            window.open(this.game.playLink, '_blank');
+            },
+        },
 };
 </script>
 

@@ -1,18 +1,13 @@
 <template>
-    <nav class="navbar">
-      <div class="logo">
-        <img src="../assets/bytro_logo.png" alt="Bytro">
-      </div>
-    </nav>
+  <nav class="navbar">
+    <div class="logo">
+      <router-link to="/">
+        <img src="../assets/bytro_logo.png" alt="Bytro" />
+      </router-link>
+    </div>
+  </nav>
 </template>
 
-<script>
-
-export default {
-
-
-}
-</script>
 
 <style lang="scss">
 
