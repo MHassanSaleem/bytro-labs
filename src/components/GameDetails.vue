@@ -52,8 +52,13 @@
             />
           </div>
         </div>
-
       </div>
+    </div>
+
+    <div class="play-social-button">
+      <a href='#' class="play-btn">
+          <font-awesome-icon :icon="['fas', 'play']" class="ml10" /> Play Now
+      </a>
     </div>
 
     <!-- Footer -->
@@ -152,10 +157,9 @@ export default {
   .game-heading{
     display: flex;
     justify-content: space-around;
+    background-color: #dd0917;
     h2{
       color: white;
-      background-color: #dd0917;
-      padding: 15px 40px;
     }
   }
 
@@ -175,7 +179,6 @@ export default {
       padding: 1rem;
       margin: 0.5rem 0;
       background-color: #2c2f33;
-      border: 1px solid #dd0917;
       color: #fff;
       border: none;
       cursor: pointer;
@@ -183,7 +186,8 @@ export default {
       font-size: 16px;
 
       &.active,.hover {
-        background-color: #dd0917;
+        background-color: white;
+        color: #dd0917;
       }
     }
   }
@@ -206,6 +210,28 @@ export default {
         border: 2px solid #dd0917;
       }
     }
+  }
+
+  .play-social-button{
+    display: flex;
+    justify-content: space-around;
+    margin: 3rem auto;
+  }
+
+  .play-btn {
+      width: 10rem;
+      height: 50px;
+      background-color: #dd0917;
+      color: white;
+      display: flex;
+      padding: 0px 5px;
+      justify-content: center;
+      align-items: center;
+      cursor: url('../assets/cursor.png') 16 16, auto;
+  }
+
+  .ml10{
+    margin-right: 10px;
   }
 
 // Responsive adjustments for smaller devices
