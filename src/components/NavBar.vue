@@ -10,7 +10,6 @@
 
 
 <style lang="scss">
-
 // Variables
 //$primary-color: #ff4500;
 $red-color: #dd0917;
@@ -37,5 +36,4 @@ $transparent-color: rgba(0, 0, 0, 0.7);
     height: 4rem;
   }
 }
-
 </style>

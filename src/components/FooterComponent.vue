@@ -2,10 +2,10 @@
     <footer class="footer">
       <p>
         Designed and developed by 
-        <a href="https://mhassansaleem.netlify.app/" target="_blank" rel="noopener noreferrer">Hassan</a>
+        <a href="https://mhassansaleem.netlify.app/" target="_blank" rel="noopener noreferrer">Hassan <font-awesome-icon :icon="['fas', 'globe']"/></a>
       </p>
       <a href="https://github.com/MHassanSaleem/bytro-labs" target="_blank" rel="noopener noreferrer" class="github-link">
-        View Code
+        View Code <font-awesome-icon :icon="['fas', 'code']"/>
       </a>
     </footer>
 </template>
@@ -45,7 +45,7 @@ $transparent-color: rgba(0, 0, 0, 0.7);
   color: $white-color;
   font-size: 0.9rem;
   a {
-    color: $red-color;
+    color: #1E90FF;
     text-decoration: none;
     @include transition(color, 0.3s);
     &:hover {

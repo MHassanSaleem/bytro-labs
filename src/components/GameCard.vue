@@ -14,11 +14,15 @@
         </div>
         <div class="game-title-section">
             <!-- Details Button -->
-             <RouterLink :to="{ name: 'GameDetails', params:{id:game.id}}" class="details-btn"> Detail</RouterLink>
+             <RouterLink :to="{ name: 'GameDetails', params:{id:game.id}}" class="details-btn"> 
+              <font-awesome-icon :icon="['fas', 'circle-info']" size="2xl"/>
+             </RouterLink>
             <!-- Game Title -->
             <h2 class="game-title">{{ game.title }}</h2>
             <!-- Play Button -->
-            <button class="play-btn"  @click="goToPlay"></button>
+            <a :href="game.playLink" target="_blank" rel="noopener noreferrer" class="play-btn">
+              <font-awesome-icon :icon="['fas', 'play']" class="ml10" /> Play
+            </a>
         </div>
     </div>
 </template>
@@ -32,12 +36,6 @@ export default {
             required: true,
         },
     },
-    methods: {
-       
-            goToPlay() {
-            window.open(this.game.playLink, '_blank');
-            },
-        },
 };
 </script>
 
@@ -100,7 +98,7 @@ a{
           font-size: 1rem;
           margin-bottom: 1rem;
           padding: 0 1rem;
-          overflow: hidden; /* Ensures smooth appearance */
+          overflow: hidden; 
         }
         .max-players{
           font-size: 0.8rem;
@@ -121,40 +119,36 @@ a{
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-      gap: 1rem; /* Add space between title and buttons */
       padding: 1rem;
       color: $white-color;
       transition: all 0.3s ease-in-out;
         h2.game-title {
-          font-size: 1rem; /* Bold and slightly larger font */
+          font-size: 1rem; 
           text-align: center;
           margin: 0;
           padding: 0;
         }
         .play-btn {
-        width: 50px; /* Full width button */
-        height: 50px; /* Full height button */
-        background-color: $red-color; /* Red background */
-        color: $white-color;
-        border-radius: 50%; /* Make it round */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: url('../assets/cursor.png') 16 16, auto;
+          width: 70px;
+          height: 50px;
+          background-color: #dd0917;
+          color: white;
+          display: flex;
+          padding: 0px 5px;
+          justify-content: center;
+          align-items: center;
+          cursor: url('../assets/cursor.png') 16 16, auto;
       }
       .play-btn:hover {
         background-color: $white-color; /* White background on hover */
         color: $red-color; /* Red text color on hover */
       }
-      .play-btn::before {
-        content: "▶"; /* Play icon */
-        font-size: 1rem; /* Increase the size of the play icon */
-      }
+
       .details-btn {
-        width: 50px; /* Full width button */
-        height: 50px; /* Full height button */
-        background-color: $grey-color; /* Red background */
-        color: $red-color;
+        width: 50px; 
+        height: 50px;
+        background-color: $grey-color;
+        color: #a7a7a7;
         border-radius: 50%; /* Make it round */
         display: flex;
         justify-content: center;
@@ -162,10 +156,12 @@ a{
         cursor: url('../assets/cursor.png') 16 16, auto;
       }
       .details-btn:hover {
-        background-color: $white-color; /* White background on hover */
-        color: $red-color; /* Red text color on hover */
+        background-color: $grey-color; /* White background on hover */
+        color: $white-color; /* Red text color on hover */
       }
-
+      .ml10{
+        margin-right: 10px;
+      }
     }
   }
 
